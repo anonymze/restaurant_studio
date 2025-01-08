@@ -1,14 +1,14 @@
 import { defineField, defineType } from 'sanity';
 
 
-export const menuType = defineType({
-  name: 'menu',
-  title: 'Menu',
+export const wineType = defineType({
+  name: 'wine',
+  title: 'Caves',
   type: 'document',
   fields: [
     defineField({
-      name: 'menuItems',
-      title: 'Menu Items',
+      name: 'caveItems',
+      title: 'Cave Items',
       type: 'array',
       of: [
         {
@@ -20,23 +20,23 @@ export const menuType = defineType({
               type: 'string',
               options: {
                 list: [
-                  {title: 'Entrée', value: 'entry'},
-                  {title: 'Plat', value: 'plate'},
-                  {title: 'Dessert', value: 'dessert'},
+                  {title: 'Blanc', value: 'blanc'},
+                  {title: 'Rouge', value: 'rouge'},
+                  {title: 'Rosé', value: 'rose'},
                 ],
               },
               validation: (rule) => rule.required(),
             },
             {
-              name: 'title',
-              title: 'Titre',
+              name: 'name',
+              title: 'Nom',
               type: 'string',
               validation: (rule) => rule.required(),
             },
             {
               name: 'description',
               title: 'Description',
-              type: 'text',
+              type: 'string',
               validation: (rule) => rule.required(),
             },
             {
@@ -45,26 +45,15 @@ export const menuType = defineType({
               type: 'number',
               validation: (rule) => rule.required().min(1),
             },
-            {
-              name: 'vegetarian',
-              title: 'Végétarien',
-              type: 'boolean',
-              initialValue: false,
-            },
-            {
-              name: 'allergens',
-              title: 'Allergènes',
+						{
+              name: 'bio',
+              title: 'Bio',
               type: 'boolean',
               initialValue: false,
             },
           ],
         },
       ],
-    }),
-    defineField({
-      name: 'date',
-      type: 'date',
-      validation: (rule) => rule.required(),
     }),
   ],
 })

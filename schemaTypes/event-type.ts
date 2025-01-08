@@ -1,11 +1,16 @@
 import { defineField, defineType } from 'sanity';
 
 
-export const evenementType = defineType({
-  name: 'evenement',
+export const eventType = defineType({
+  name: 'event',
   title: 'Événement',
   type: 'document',
   fields: [
+    defineField({
+      name: 'date',
+      type: 'datetime',
+      validation: (rule) => rule.required(),
+    }),
     defineField({
       name: 'type',
       title: 'Type',
@@ -13,8 +18,8 @@ export const evenementType = defineType({
       options: {
         list: [
           {title: 'Concert', value: 'concert'},
-          {title: 'Soirée jeu de société', value: 'boardgame'},
-          {title: 'Autre', value: 'other'},
+          {title: 'Soirée jeu', value: 'game'},
+          {title: 'Dégustation', value: 'degustation'},
         ],
       },
       validation: (rule) => rule.required(),
@@ -32,10 +37,8 @@ export const evenementType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'date',
-      type: 'date',
-      initialValue: () => new Date().toISOString(),
-      validation: (rule) => rule.required(),
+      name: 'image',
+      type: 'image',
     }),
   ],
 })
