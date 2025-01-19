@@ -7,12 +7,12 @@ export const agendaType = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'image',
-      title: 'Image',
-      type: 'image',
+      name: 'file',
+      title: 'Fichier PDF',
+      type: 'file',
       validation: (rule) => rule.required(),
       options: {
-        hotspot: true,
+        accept: '.pdf' // This restricts uploads to PDF files only
       },
     }),
   ],
