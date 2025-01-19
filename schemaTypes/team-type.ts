@@ -26,6 +26,12 @@ export const teamType = defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
+      name: 'description',
+      title: 'Description',
+      type: 'text',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
       name: 'image',
       title: 'Image',
       type: 'image',
