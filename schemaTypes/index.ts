@@ -1,8 +1,8 @@
-import { eventType } from './event-type';
+import { agendaType } from './agenda-type';
 import { workType } from './work-type';
 import { wineType } from './wine-type';
-import { menuType } from './menu-type';
+import { teamType } from './team-type';
 
 
-export const schemaTypes = [menuType, eventType, workType, wineType]
+export const schemaTypes = [agendaType, workType, wineType, teamType]
 

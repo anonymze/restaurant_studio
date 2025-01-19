@@ -1,9 +1,9 @@
 import { defineField, defineType } from 'sanity';
 
 
-export const wineType = defineType({
-  name: 'wine',
-  title: 'Cave',
+export const agendaType = defineType({
+  name: 'agenda',
+  title: 'Agenda',
   type: 'document',
   fields: [
     defineField({
