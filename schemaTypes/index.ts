@@ -1,8 +1,9 @@
+import { actuFirstType } from './actu-first-type';
 import { agendaType } from './agenda-type';
 import { workType } from './work-type';
 import { wineType } from './wine-type';
 import { teamType } from './team-type';
 
 
-export const schemaTypes = [agendaType, workType, wineType, teamType]
+export const schemaTypes = [agendaType, workType, wineType, teamType, actuFirstType]
 

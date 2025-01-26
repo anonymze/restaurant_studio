@@ -8,7 +8,7 @@ export const workType = defineType({
   fields: [
     defineField({
       name: 'starting_work',
-      title: "Horaire d'ouverture",
+      title: "Horaire d'ouverture premier service",
       type: 'string',
       options: {
         list: ALLOWED_TIMES(),
@@ -17,12 +17,28 @@ export const workType = defineType({
     }),
     defineField({
       name: 'ending_work',
-      title: 'Horaire de fermeture',
+      title: 'Horaire de fermeture premier service',
       type: 'string',
       options: {
         list: ALLOWED_TIMES(),
       },
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'starting_work_2',
+      title: "Horaire d'ouverture deuxième service",
+      type: 'string',
+      options: {
+        list: ALLOWED_TIMES(),
+      },
+    }),
+    defineField({
+      name: 'ending_work_2',
+      title: 'Horaire de fermeture deuxième service',
+      type: 'string',
+      options: {
+        list: ALLOWED_TIMES(),
+      },
     }),
     defineField({
       name: 'days_of_work',
