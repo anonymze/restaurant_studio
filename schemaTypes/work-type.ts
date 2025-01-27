@@ -7,56 +7,26 @@ export const workType = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'starting_work',
-      title: "Horaire d'ouverture premier service",
-      type: 'string',
-      options: {
-        list: ALLOWED_TIMES(),
-      },
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'ending_work',
-      title: 'Horaire de fermeture premier service',
-      type: 'string',
-      options: {
-        list: ALLOWED_TIMES(),
-      },
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
-      name: 'starting_work_2',
-      title: "Horaire d'ouverture deuxième service",
-      type: 'string',
-      options: {
-        list: ALLOWED_TIMES(),
-      },
-    }),
-    defineField({
-      name: 'ending_work_2',
-      title: 'Horaire de fermeture deuxième service',
-      type: 'string',
-      options: {
-        list: ALLOWED_TIMES(),
-      },
-    }),
-    defineField({
-      name: 'days_of_work',
+      name: 'first_day_work',
       title: "Jours d'ouverture",
-      type: 'array',
-      of: [{type: 'string'}],
-      options: {
-        list: [
-          {title: 'Lundi', value: 'Lundi'},
-          {title: 'Mardi', value: 'Mardi'},
-          {title: 'Mercredi', value: 'Mercredi'},
-          {title: 'Jeudi', value: 'Jeudi'},
-          {title: 'Vendredi', value: 'Vendredi'},
-          {title: 'Samedi', value: 'Samedi'},
-          {title: 'Dimanche', value: 'Dimanche'},
-        ],
-      },
+      type: 'string',
       validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'hours_first_day_work',
+      title: 'Horaires d\'ouverture et fermeture',
+      type: 'string',
+      validation: (rule) => rule.required(),
+    }),
+    defineField({
+      name: 'second_day_work',
+      title: "Autres jours d'ouverture",
+      type: 'string',
+    }),
+    defineField({
+      name: 'hours_second_day_work',
+      title: 'Autres horaires d\'ouverture et fermeture',
+      type: 'string',
     }),
   ],
 })

@@ -7,12 +7,6 @@ export const actuFirstType = defineType({
   type: 'document',
   fields: [
     defineField({
-      name: 'title',
-      title: 'Titre',
-      type: 'string',
-      validation: (rule) => rule.required(),
-    }),
-    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',
